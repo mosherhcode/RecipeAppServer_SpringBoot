@@ -20,11 +20,18 @@ public class RecipeController {
 	RecipeDao rDao;
 	
 	
+	/**
+	 * @param userId
+	 * @return The user's list of recipes
+	 */
 	@RequestMapping(path = "/{userId}", method = RequestMethod.GET)
 	public List<Recipe> getAllRecipesByUserId(@PathVariable String userId){
 		return null;
 	}
 	
+	/**
+	 * @return The list of all recipes in the system
+	 */
 	@RequestMapping(path = "", method = RequestMethod.GET)
 	public List<Recipe> getAllRecipes(){
 		return rDao.getAllRecipes();

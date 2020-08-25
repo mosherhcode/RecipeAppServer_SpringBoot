@@ -6,6 +6,13 @@ public class Ingredient {
 	private double amount;
 	private String unit;
 	
+	public Ingredient(String ingredientId, String ingredientName, double amount, String unit) {
+		
+		this.ingredientId = ingredientId;
+		this.ingredientName = ingredientName;
+		this.amount = amount;
+		this.unit = unit;
+	}
 	public String getIngredientId() {
 		return ingredientId;
 	}
