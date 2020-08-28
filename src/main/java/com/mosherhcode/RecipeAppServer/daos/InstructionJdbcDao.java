@@ -30,6 +30,18 @@ public class InstructionJdbcDao implements InstructionDao {
 		}
 		return instructionList;
 	}
+	
+	public Instruction addInstructionToRecipe(String recipeId, Instruction newInstruction) {
+		String sql = "INSERT INTO instruction (recipe_id, instruction_number, instruction_text) "
+				+ "VALUES (?, ?, ?) RETURNING instruction_id";
+		
+		String instructionId = jdbcTemplate.queryForObject(sql, UUID.class, UUID.fromString(recipeId), newInstruction.getInstructionNumber(), newInstruction.getInstructionText()).toString();
+		return getInstructionByInstructionId(instructionId);
+	}
+	
+	public Instruction getInstructionByInstructionId(String instructionId) {
+		return null;
+	}
 
 
 	private Instruction mapRowToInstruction(SqlRowSet results) {

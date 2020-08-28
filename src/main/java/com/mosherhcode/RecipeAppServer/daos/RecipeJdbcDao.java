@@ -72,6 +72,9 @@ public class RecipeJdbcDao implements RecipeDao {
 		InstructionDao instructionDao = new InstructionJdbcDao(this.jdbcTemplate);
 		theRecipe.setInstructions(instructionDao.getInstructionsByRecipeId(theRecipe.getRecipeId()));
 		
+		IngredientDao ingredientDao = new IngredientJdbcDao(this.jdbcTemplate);
+		theRecipe.setIngredients(ingredientDao.getIngredientsByRecipeId(theRecipe.getRecipeId()));
+		
 		return theRecipe;
 	}
 	

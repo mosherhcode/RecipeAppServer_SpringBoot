@@ -8,4 +8,8 @@ public interface InstructionDao {
 
 	
 	public List<Instruction> getInstructionsByRecipeId(String recipeId);
+	
+	public Instruction addInstructionToRecipe(String recipeId, Instruction newInstruction);
+	
+	public Instruction getInstructionByInstructionId(String instructionId);
 }
